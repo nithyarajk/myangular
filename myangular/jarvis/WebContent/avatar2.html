@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<TITLE>I.V.A</TITLE>
+
+</HEAD>
+<style>
+body {
+	background: #ffffff url("./resources/office3.jpg") no-repeat right top;
+	background-size: 100% 100%;
+}
+</style>
+
+</head>
+<script>
+
+function firstMessage(){
+	speech("Before I recommend a coverage, lemme explain a bit");
+	displayChart();
+	speech("For your goals, you'll be investing an amount every month, which grows enough supporting Ben's education. If there's unfortunate death prior to that, entire amount will be available to a beneficiary you select. Do you have any questions?");
+	
+}
+
+function displayChart(){
+		
+}
+
+function wait() {
+	var timeleft = 10;
+	var downloadTimer = setInterval(function() {
+		timeleft--;
+		if (timeleft <= 0)
+			clearInterval(downloadTimer);
+	}, 1000);
+	return true;
+}
+
+function speech(text) {
+	var u = new SpeechSynthesisUtterance();
+	u.text = text;
+	u.lang = 'en-US';
+	u.rate = 0.2;
+	web.addMessage(text);
+	web.processMessages();
+	//speechSynthesis.speak(u);
+}
+</script>
+<body onload="displayChart();">
+
+	<div id="demo"></div>
+<div id="chart"><img width="300" height="200" style="margin-left: 700px; margin-top: 100px;"src="./resources/user.png"/></div>
+	<script type='text/javascript' src="./resources/sdk.js"></script>
+	<script type='text/javascript'>
+
+SDK.applicationId = "6929259702286656508";
+var sdk = new SDKConnection();
+var web = new WebAvatar();
+web.connection = sdk;
+web.avatar = "12601502";
+web.voice = "cmu-slt-hsmm";
+web.voiceMod = "default";
+web.nativeVoice = true;
+web.nativeVoiceName = "Google US English";
+web.lang = "en-US";
+web.width = "450";
+web.height = "500";
+document.getElementById("demo").innerHTML=web.createBox();
+web.addMessage("");
+web.processMessages();
+
+</script>
+</html>
+
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="./resources/cb=gapi.loaded_0" async=""></script>
+<script type="text/javascript" async=""
+	src="./resources/plusone.js.download" gapi_processed="true"></script>
+<script type="text/javascript" async="" src="./resources/ga.js.download"></script>
+<script type="text/javascript" async="" src="./resources/chat.js"></script>
+<script type='text/javascript' src="./resources/sdk.js"></script>
+<meta content="initial-scale=1, minimum-scale=1, width=device-width"
+	name="viewport">
+<title>Am Listening...!!</title>
+<link href="https://plus.google.com/100585555255542998765" rel="publisher">
+<link href="https://www.google.com/images/icons/product/chrome-32.png" rel="icon" type="image/ico">
+
+<style>
+body{
+	background: #ffffff url("./resources/office3.jpg") no-repeat right top;
+	background-size: 100% 100%;
+}
+</style>
+</head>
+<script>
+	console.log("called");
+		SDK.applicationId = "6929259702286656508";
+		var sdk = new SDKConnection();
+		var web = new WebAvatar();
+		web.connection = sdk;
+		web.avatar = "12601502";
+		web.voice = "cmu-slt-hsmm"; 
+		/* web.avatar = "14040617";
+		web.voice = "jessica_voice-hsmm"; */
+		web.voiceMod = "default";
+		web.nativeVoice = true;
+		web.nativeVoiceName = "Google US English";
+		web.lang = "en-US";
+		web.width = "450";
+		web.height = "500";
+		//document.getElementById("demo").innerHTML = web.createBox();
+		web.addMessage("");
+		web.processMessages();
+	</script>
+
+<body >
+
+	
+</body>
+</html>
