@@ -11,27 +11,18 @@ body {
 </style>
 
 </head>
+<body onload="firstMessage();">
+
+	<div id="demo"></div>
+<div id="chart" style="display: block">
+	<img width="400" height="300" style="margin-left: 700px; margin-top: 100px;"src="./resources/chart.png"/>
+</div>
+
 <script>
 
 function firstMessage(){
 	speech("Before I recommend a coverage, lemme explain a bit");
-	displayChart();
 	speech("For your goals, you'll be investing an amount every month, which grows enough supporting Ben's education. If there's unfortunate death prior to that, entire amount will be available to a beneficiary you select. Do you have any questions?");
-	
-}
-
-function displayChart(){
-		
-}
-
-function wait() {
-	var timeleft = 10;
-	var downloadTimer = setInterval(function() {
-		timeleft--;
-		if (timeleft <= 0)
-			clearInterval(downloadTimer);
-	}, 1000);
-	return true;
 }
 
 function speech(text) {
@@ -44,10 +35,7 @@ function speech(text) {
 	//speechSynthesis.speak(u);
 }
 </script>
-<body onload="displayChart();">
 
-	<div id="demo"></div>
-<div id="chart"><img width="300" height="200" style="margin-left: 700px; margin-top: 100px;"src="./resources/user.png"/></div>
 	<script type='text/javascript' src="./resources/sdk.js"></script>
 	<script type='text/javascript'>
 
